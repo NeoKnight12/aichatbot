@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Function to apply settings
+    // apply settings
     function applySettings(settings) {
         // Apply font color
         document.body.style.color = settings['font-color'];
