@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Welcome Screen</title>
+<style>
+    body {
+        font-family: Arial, sans-serif; 
+        background: black;
+        margin: 0;
+        padding: 0;
+        overflow: hidden; /* Prevent scrolling */
+    }
+
+    .container {
+        width: 300px;
+        height: 400px;
+        perspective: 1000px;
+        display: inline-block;
+        margin-right: 20px;
+    }
+
+    .flip-container, .flipper {
+        transition: transform 0.8s ease; /* Smooth transition */
+    }
+
+    .flip-container {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        transform-style: preserve-3d;
+    }
+
+    .flip-container:hover .flipper {
+        transform: rotateY(180deg);
+    }
+
+    .flipper {
+        width: 100%;
+        height: 100%;
+        transform-style: preserve-3d;
+    }
+
+    .front, .back {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        backface-visibility: hidden;
+        border-radius: 30px;
+        
+    }
+
+    .front {
+        background-color: white;
+        color: #333; /* Dark grey text */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .back {
+        background-color: white;
+        color: #333; /* White text */
+        display: flex;
+        justify-content: center; /* Center horizontally */
+        align-items: center; /* Center vertically */
+        transform: rotateY(180deg);
+        text-align: center; /* Center text */
+    }
+
+    .button {
+        width: 40%;
+        height: auto;
+        text-align: center;
+        margin: auto;
+        font-family: Arial, sans-serif; /* Change font */
+        background-color: white; /* White background */
+        color: black; /* Black text */
+        border: 2px solid transparent; /* Transparent border to start */
+        border-radius: 25px;
+        padding: 10px; /* Add padding */
+        cursor: pointer;
+        text-decoration: none !important;
+        transition: border-color 0.3s ease;
+        border: 3px solid rgb(255, 255, 255); /* Add blue border */
+        border-radius: 30px;
+    }
+
+    .button:hover {
+        border-color: rgb(75, 75, 75); /* Change border color on hover */
+    }
+
+    a {
+        text-decoration: none !important;
+        color: inherit;
+    }
+
+    .cards {
+        position: fixed; 
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+    }
+
+    .cards .container:hover {
+        transform: scale(1.05); /* Scale up on hover */
+    }
+
+    canvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1; /* Place canvas behind other content */
+    }
+</style>
+</head>
+<body>
+    <!-- Canvas for particle animation -->
+    <canvas id="canvas"></canvas>
+
+    <div class="button">
+        <a href="/index">
+            <h1>Talk to Friend 2.0</h1>
+        </a>
+    </div>
+    <div class="cards">
+        <div class="container">
+            <div class="flip-container">
+                <div class="flipper">
+                    <!-- Front of the card -->
+                    <div class="front">
+                        <h2>Comfort</h2>
+                    </div>
+                    <!-- Back of the card -->
+                    <div class="back">
+                        <p>Friend 2.0 is here to provide you with comforting and supportive responses whenever you need them.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="flip-container">
+                <div class="flipper">
+                    <!-- Front of the card -->
+                    <div class="front">
+                        <h2>Support</h2>
+                    </div>
+                    <!-- Back of the card -->
+                    <div class="back">
+                        <p>Friend 2.0 offers helpful advice and information to assist you in various situations.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="flip-container">
+                <div class="flipper">
+                    <!-- Front of the card -->
+                    <div class="front">
+                        <h2>Companion</h2>
+                    </div>
+                    <!-- Back of the card -->
+                    <div class="back">
+                        <p>Friend 2.0 is always available to chat whenever you need a friend by your side.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for particle animation -->
+    <script>
+        const canvas = document.getElementById("canvas");
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        const ctx = canvas.getContext("2d");
+
+        class Vec2 extends Array {
+            constructor (...values) {
+                switch(values.length) {
+                    case 2:{
+                        const v = values[0];
+                        super(v, values[1]);
+                        break;
+                    }
+                    case 1: {
+                        const v = values[0];
+                        super(v, v);
+                        break;
+                    }
+                    default: {
+                        super(2);
+                        break;
+                    }
+                }
+            }
+
+            get x(){ return this[0]; }
+            set x(value) { this[0] = value; }
+
+            get y() { return this[1]; }
+            set y(value) { this[1] = value; }
+
+            add (b) {
+                this[0] += b[0];
+                this[1] += b[1];
+            }
+
+            distance (b) {
+                return Vec2.distance(this, b);
+            }
+
+            static distance(a, b) {
+                return Math.hypot(b[0] - a[0], b[1] - a[1]);
+            }
+        }
+
+        class Particle {
+            constructor() {
+                this.speed = new Vec2(Math.random(), Math.random());
+                this.position = new Vec2(Math.random() * window.innerWidth, Math.random() * window.innerHeight);
+                this.radius = Math.random() * 4 + 1;
+            }
+
+            update() {
+                if (this.position.x > window.innerWidth || this.position.x < 0) {
+                    this.speed.x *= -1;
+                }
+                if (this.position.y > window.innerHeight || this.position.y < 0) {
+                    this.speed.y *= -1;
+                }
+                this.position.add(this.speed);
+            }
+        }
+
+        const particles = [];
+        for (let i = 0; i < 100; i++) {
+            particles.push(new Particle());
+        }
+
+        const update = () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            const MAX_DISTANCE = (window.innerWidth + window.innerHeight) / 20;
+
+            for (let i = 0; i < particles.length; i++) {
+                particles[i].update();
+
+                for (let j = i; j < particles.length; j++) {
+                    const distance = particles[i].position.distance(particles[j].position);
+                    if (distance < MAX_DISTANCE) {
+                        ctx.strokeStyle = `rgba(255, 255, 255, ${1 - distance/MAX_DISTANCE})`;
+                        ctx.beginPath();
+                        ctx.moveTo(...particles[i].position);
+                        ctx.lineTo(...particles[j].position);
+                        ctx.stroke();
+                    }
+                }
+
+                ctx.fillStyle = "rgba(255, 255, 255, 0.5)";
+                ctx.beginPath();
+                ctx.arc(
+                    ...particles[i].position,
+                    particles[i].radius,
+                    0, 2 * Math.PI
+                );
+                ctx.fill();
+            }
+            requestAnimationFrame(update);
+        }
+        update();
+    </script>
+</body>
+</html>

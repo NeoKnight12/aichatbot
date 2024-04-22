@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        
+    
+        h1 {
+            text-align: center;
+            margin-top: 50px; /* Add some space at the top */
+        }
+    
+        #settings-form {
+            max-width: 400px;
+            margin: 0 auto; /* Center the form horizontally */
+            padding: 20px;
+            background-color: #fff; /* White background */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+        }
+    
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+    
+        input[type="color"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc; /* Light grey border */
+            border-radius: 5px;
+            background-color: #f9f9f9; /* Light grey background */
+            transition: border-color 0.3s ease; /* Smooth transition for border color */
+        }
+    
+        input[type="color"]:focus,
+        select:focus {
+            border-color: #555; /* Dark grey border color on focus */
+        }
+    
+        button[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff; /* Blue button */
+            color: #fff; /* White text */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease; /* Smooth transition for background color */
+        }
+    
+        button[type="submit"]:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+    </style>
+    
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/index">Chat</a></li>
+            <li><a href="/settings">Settings</a></li>
+            <li><a href="/">About Friend 2.0</a></li>
+        </ul>
+    </nav>
+    <h1>Settings Page</h1>
+    <form id="settings-form" action="/settings" method="post">
+        <label for="font-color">Font Color:</label>
+        <input type="color" id="font-color" name="font-color" value="{{ settings['font-color'] }}">
+
+        <label for="font-size">Font Size:</label>
+        <select id="font-size" name="font-size">
+            <option value="12px" {% if settings['font-size'] == '12px' %} selected {% endif %}>Small</option>
+            <option value="16px" {% if settings['font-size'] == '16px' %} selected {% endif %}>Medium</option>
+            <option value="20px" {% if settings['font-size'] == '20px' %} selected {% endif %}>Large</option>
+            <option value="24px" {% if settings['font-size'] == '24px' %} selected {% endif %}>Extra Large</option>
+        </select>
+
+        <label for="background-color">Background Color:</label>
+        <input type="color" id="background-color" name="background-color" value="{{ settings['background-color'] }}">
+
+        <label for="font-family">Font Family:</label>
+        <select id="font-family" name="font-family">
+            <option value="Arial, sans-serif" {% if settings['font-family'] == 'Arial, sans-serif' %} selected {% endif %}>Arial</option>
+            <option value="Times New Roman, serif" {% if settings['font-family'] == 'Times New Roman, serif' %} selected {% endif %}>Times New Roman</option>
+            <option value="Verdana, sans-serif" {% if settings['font-family'] == 'Verdana, sans-serif' %} selected {% endif %}>Verdana</option>
+            <option value="Courier New, monospace" {% if settings['font-family'] == 'Courier New, monospace' %} selected {% endif %}>Courier New</option>
+        </select>
+
+        <button type="submit">Apply</button>
+    </form>
+
+    <!-- Include the JavaScript file here -->
+    <script src="{{ url_for('static', filename='settings.js') }}"></script>
+</body>
+
+</html>

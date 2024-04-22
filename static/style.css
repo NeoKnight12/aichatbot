@@ -1,0 +1,119 @@
+/* styles.css */
+
+body {
+    --font-color: #000000; /* Default font color */
+    --font-size: 16px; /* Default font size */
+    --background-color: #ffffff; /* Default background color */
+    --font-family: Arial, sans-serif; /* Default font family */
+    color: var(--font-color);
+    font-size: var(--font-size);
+    background-color: var(--background-color);
+    font-family: var(--font-family);
+}
+
+nav {
+    background-color: #333;
+    padding: 10px 0;
+    text-align: center; /* Center the buttons */
+    font-family: Arial, sans-serif; /* Change the font */
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    font-size: 16px; /* Adjust font size */
+}
+
+nav ul li a:hover {
+    background-color: #555;
+}
+
+/* Add hover effect to each nav item */
+nav ul li:hover a {
+    transform: translateY(-3px); /* Move the button up slightly on hover */
+}
+
+#chat-container {
+    position: relative; /* Set chat container as relative */
+    width: 400px;
+    height: 500px;
+    margin: 50px auto;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    overflow-y: auto; /* Enable vertical scrolling */
+    max-height: calc(100% - 120px); /* Set maximum height for scrolling */
+    scroll-behavior: smooth; /* Enable smooth scrolling */
+}
+
+#chat-container > *:last-child {
+    scroll-margin-bottom: 50px; /* Adjust as needed based on your message height */
+}
+
+#user-input-container {
+    position: fixed; /* Set user input container as fixed */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px; /* Add padding to separate from chat container */
+    background-color: #f9f9f9; /* Add background color for contrast */
+    z-index: 1; /* Ensure it's above the chat container */
+}
+
+#user-input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin: 10px 0;
+    resize: none;
+    font-size: 14px;
+}
+
+button {
+    width: calc(100% - 40px); /* Adjusted width */
+    height: 50px; /* Increase button height */
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background-color: #0074D9;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 10px auto; /* Center the button */
+    display: block; /* Make the button a block element */
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.user-message, .bot-message {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+
+.user-message {
+    background-color: #f9f9f9;
+}
+
+.bot-message {
+    background-color: #0074D9;
+    color: #ffffff;
+}
