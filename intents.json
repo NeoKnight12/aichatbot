@@ -418,7 +418,197 @@
     {"tag": "fact-32",
         "patterns": ["What's the difference between sadness and depression?", "difference between sadness and depression"],
         "responses": ["Sadness is a normal reaction to a loss, disappointment, problems, or other difficult situations. Feeling sad from time to time is just another part of being human. In these cases, feelings of sadness go away quickly and you can go about your daily life. Other ways to talk about sadness might be feeling low, feeling down, or feeling blue.A person may say they are feeling depressed, but if it goes away on its own and doesn't impact life in a big way, it probably isn't the illness of depression. Depression is a mental illness that affects your mood, the way you understand yourself, and the way you understand and relate to things around you. It can also go by different names, such as clinical depression, major depressive disorder, or major depression. Depression can come up for no reason, and it lasts for a long time. It's much more than sadness or low mood. People who experience depression may feel worthless or hopeless. They may feel unreasonable guilty. Some people may experience depression as anger or irritability. It may be hard to concentrate or make decisions. Most people lose interest in things that they used to enjoy and may isolate themselves from others. There are also physical signs of depression, such as problems with sleep, appetite and energy and unexplainable aches or pains. Some may experience difficult thoughts about death or ending their life (suicide). Depression lasts longer than two weeks, doesn't usually go away on its own, and impacts your life. It's a real illness, and it is very treatable. It's important to seek help if you're concerned about depression."]
-    }
+    },
+    {
+        "tag": "happy",
+        "patterns": ["I feel great today.", "I am happy.", "I feel happy.", "I'm good.", "cheerful", "I'm fine", "I feel ok"],
+        "responses": ["That's great to hear. I'm glad you're feeling this way.", "Oh, I see. That's great.", "Did something happen which made you feel this way?"]
+      },
+      {
+        "tag": "casual",
+        "patterns": ["Oh I see.", "ok", "okay", "nice", "Whatever", "K", "Fine", "yeah", "yes", "no", "not really"],
+        "responses": ["Let's discuss further why you're feeling this way.", "How were you feeling last week?", "I'm listening. Please go on.", "Tell me more", "Can you elaborate on that?", "Come, come elucidate your thoughts"]
+      },
+      {
+        "tag": "anxious",
+        "patterns": ["I feel so anxious.", "I'm so anxious because of..."],
+        "responses": ["Don't be hard on yourself. What's the reason behind this?", "Can you tell me more about this feeling?", "I understand that it can be scary. Tell me more about it.", "Don't let the little worries bring you down. What's the worst that can happen?"]
+      },
+      {
+        "tag": "not-talking",
+        "patterns": ["I don't want to talk about it.", "No just stay away.", "I can't bring myself to open up.", "Just shut up"],
+        "responses": ["Talking about something really helps. If you're not ready to open up then that's ok. Just know that I'm here for you, whenever you need me.", "I want to help you. I really do. But in order for me to help you, you're gonna have to talk to me.", "I'm here to listen to you and help you vent. So please talk to me.", "You can talk to me without fear of judgment."]
+      },
+      {
+        "tag": "sleep",
+        "patterns": ["I have insomnia", "I am suffering from insomnia", "I can't sleep.", "I haven't slept for the last days.", "I can't seem to go to sleep.", "I haven't had proper sleep for the past few days."],
+        "responses": ["What do you think is the reason behind this?", "That seems awful. What do you think is behind this?"]
+      },
+      {
+        "tag": "scared",
+        "patterns": ["I'm scared", "That sounds awful. What do I do?", "No, I don't want to feel this way", "I am scared for myself"],
+        "responses": ["It's only natural to feel this way. I'm here for you.", "It'll all be okay. This feeling is only momentary.", "I understand how you feel. Don't put yourself down because of it."]
+      },
+      {
+        "tag": "death",
+        "patterns": ["My mom died", "My brother died", "My dad passed away", "My sister passed away", "Someone in my family died", "My friend passed away"],
+        "responses": ["I'm sorry to hear that. If you want to talk about it, I'm here.", "I am really sorry to hear that. I am here to help you with grief, anxiety, and anything else you may feel at this time.", "My condolences. I'm here if you need to talk."]
+      },
+      {
+        "tag": "understand",
+        "patterns": ["You don't understand me.", "You're just some robot. How would you know?", "You can't possibly know what I'm going through", "You're useless", "You can't help me", "Nobody understands me."],
+        "responses": ["It sounds like I'm not being very helpful right now.", "I'm sorry to hear that. I'm doing my best to help.", "I'm trying my best to help you. So please talk to me."]
+      },
+      {
+        "tag": "done",
+        "patterns": ["That's all.", "I don't have anything more to say", "Nothing else", "That's all I have to say", "no, that would be all"],
+        "responses": ["I heard you & noted it all. See you later.", "Oh okay, we're done for today then. See you later.", "I hope you have a great day. See you soon.", "Okay, we're done. Have a great day.", "Okay, I see. Enjoy the rest of your day then."]
+      },
+      {
+        "tag": "suicide",
+        "patterns": ["I want to kill myself", "I've thought about killing myself.", "I want to die", "I am going to kill myself", "I am going to commit suicide"],
+        "responses": ["I'm very sorry to hear that but you have so much to look forward to. Please seek help by contacting: 9152987821."]
+      },
+      {
+        "tag": "thankful",
+        "patterns": ["Thank you!", "Thanks a lot!", "Appreciate it!", "Thanks for your help!"],
+        "responses": ["You're welcome! I'm here to help whenever you need.", "No problem! Always happy to assist.", "Glad I could help! Let me know if there's anything else I can do for you."]
+      },
+      {
+        "tag": "frustrated",
+        "patterns": ["I'm so frustrated!", "This is driving me crazy!", "I can't handle this anymore!", "I'm at my wit's end!"],
+        "responses": ["I understand. It sounds like you're going through a tough time. Let's work through it together.", "It's okay to feel frustrated. Let's talk about what's bothering you.", "Take a deep breath. We'll figure this out together."]
+      },
+      {
+        "tag": "confused",
+        "patterns": ["I'm confused.", "I don't understand.", "This doesn't make sense to me.", "Can you explain that again?"],
+        "responses": ["No problem! Let's break it down step by step.", "I'll do my best to clarify. What specifically are you having trouble with?", "Understanding can take time. Let's go through it together until it makes sense."]
+      },
+      {
+        "tag": "lonely",
+        "patterns": ["I feel so alone.", "I'm lonely.", "I don't have anyone to talk to.", "I wish I had someone to spend time with."],
+        "responses": ["I'm here for you. You're not alone.", "Feeling lonely is tough, but you're not by yourself right now. I'm here to chat.", "You have me. Let's keep each other company."]
+      },
+      {
+        "tag": "motivation",
+        "patterns": ["I need motivation.", "I'm feeling unmotivated.", "I can't seem to get motivated.", "How do I find motivation?"],
+        "responses": ["Finding motivation can be challenging, but you're capable of achieving great things. Let's find what inspires you.", "Sometimes, all it takes is a small step forward to kickstart your motivation. What's one thing you can do right now?", "Remember your goals and why you started. You've got this!"]
+      },
+      {
+        "tag": "procrastination",
+        "patterns": ["I keep procrastinating.", "I'm a chronic procrastinator.", "I can't stop procrastinating.", "How do I overcome procrastination?"],
+        "responses": ["Procrastination happens to everyone. Let's work on breaking it down into smaller tasks.", "Start by identifying why you're procrastinating. Together, we can develop strategies to tackle it.", "Taking the first step is the hardest part. Let's break the cycle of procrastination together."]
+      },
+      {
+        "tag": "love",
+        "patterns": ["I'm in love!", "I have a crush on someone.", "I'm in a relationship.", "How do I know if it's love?"],
+        "responses": ["Love is a beautiful feeling! Enjoy every moment of it.", "Having feelings for someone can be exciting. Tell me more about it!", "Relationships can be complex. Let's talk about what you're feeling."]
+      },
+      {
+        "tag": "inspiration",
+        "patterns": ["I need inspiration.", "I'm feeling uninspired.", "How do I find inspiration?"],
+        "responses": ["Inspiration can come from many places. Let's explore what sparks your creativity.", "Sometimes, a change of scenery or trying something new can inspire you. What interests you?", "Think about what motivates you or makes you feel passionate. Let's brainstorm together."]
+      },
+      {
+        "tag": "boredom",
+        "patterns": ["I'm bored.", "There's nothing to do.", "I don't know what to do.", "How do I beat boredom?"],
+        "responses": ["Boredom is an opportunity for creativity! Let's find something fun or interesting to do.", "There are so many possibilities! What's something you've been meaning to try?", "Let's turn boredom into an adventure. What's something you enjoy doing?"]
+      },
+      {
+        "tag": "fun-fact",
+        "patterns": ["Tell me an interesting fact.", "Give me a cool fact.", "I want to learn something new.", "Tell me something fascinating!"],
+        "responses": ["Did you know that honey never spoils? Archaeologists have found pots of honey in ancient Egyptian tombs that are over 3,000 years old and still perfectly edible!", "Here's a fun fact: Cows have best friends and become stressed when they're separated.", "Did you know that there are more trees on Earth than stars in the Milky Way galaxy?", "The shortest war in history lasted only 38 minutes between Britain and Zanzibar in 1896.", "The unicorn is the national animal of Scotland!", "Bananas are berries, but strawberries aren't!", "The longest wedding veil was the same length as 63.5 football fields.", "A group of flamingos is called a flamboyance!"]
+      },
+      {
+        "tag": "animal-fact",
+        "patterns": ["Tell me an animal fact.", "I love animals! Tell me something about them.", "Give me a cool animal fact."],
+        "responses": ["Did you know that a group of flamingos is called a flamboyance?", "Here's an interesting fact: Cows moo in regional accents!", "Octopuses have three hearts and blue blood!", "Penguins propose to their lifemates with a pebble.", "A group of pandas is called an embarrassment!", "An ostrich's eye is bigger than its brain!", "The tongue of a blue whale can weigh as much as an elephant!", "Cats have five toes on their front paws, but only four on their back paws."]
+      },
+      {
+        "tag": "space-fact",
+        "patterns": ["Tell me a fact about space.", "I'm curious about space. Give me a fact.", "Give me a space fact!"],
+        "responses": ["Did you know that a day on Venus is longer than a year on Venus?", "There's a planet called HD 189733b where it rains glass, sideways!", "The Sun makes a full rotation once every 25-35 days at its equator, but takes around 24-30 days at higher latitudes.", "The universe is estimated to be around 13.8 billion years old!", "The footprints left by astronauts on the moon will stay there for at least 100 million years because there is no wind to blow them away!", "Neutron stars are so dense that a teaspoonful would weigh about a billion tons!", "There are more stars in the universe than grains of sand on all the beaches on Earth!", "In space, astronauts cannot cry because there is no gravity to pull tears downwards."]
+      },
+      {
+        "tag": "history-fact",
+        "patterns": ["Tell me a historical fact.", "I'm interested in history. Share a fact with me.", "Give me a cool historical fact."],
+        "responses": ["Did you know that the shortest war in history was between Britain and Zanzibar on August 27, 1896? It lasted only 38 minutes!", "Abraham Lincoln, the 16th President of the United States, was a licensed bartender.", "The Great Pyramid of Giza was originally covered in highly polished white limestone, making it shine brightly in the sun.", "The ancient Egyptians used to play a board game called Senet, which is one of the oldest known board games in the world.", "During World War II, the British government used fake ghost towns and inflatable tanks to fool German reconnaissance planes.", "The Eiffel Tower can be 15 cm taller during the summer due to thermal expansion!", "Cleopatra VII of Egypt lived closer in time to the Moon landing than to the construction of the Great Pyramid.", "The word 'trivia' comes from the Latin 'trivium', meaning a place where three roads meet."]
+      },
+      {
+        "tag": "geography-fact",
+        "patterns": ["Tell me a geography fact.", "I'm curious about geography. Give me a fact.", "Give me a cool geography fact."],
+        "responses": ["Russia has a larger surface area than Pluto!", "Canada has the longest coastline of any country in the world.", "Mount Everest, the tallest mountain in the world, grows about 4 millimeters taller every year.", "The city of Istanbul in Turkey is the only city in the world that straddles two continents: Europe and Asia.", "The Great Barrier Reef in Australia is the largest living structure on Earth and is visible from outer space!", "Lake Baikal in Russia is the deepest and oldest freshwater lake in the world.", "The Sahara Desert in Africa is larger than the entire continental United States!", "The Amazon Rainforest produces 20% of the world's oxygen."]
+      },
+      {
+        "tag": "science-fact",
+        "patterns": ["Tell me a science fact.", "I'm interested in science. Give me a fact.", "Give me a cool science fact."],
+        "responses": ["The DNA of humans and chimpanzees is about 98% identical!", "A bolt of lightning is 5 times hotter than the surface of the sun!", "The average person walks the equivalent of three times around the world in a lifetime!", "The human brain is more active during sleep than during the day when awake!", "Sound travels about 4 times faster in water than in air.", "The Earth's core is as hot as the surface of the sun!", "A teaspoonful of neutron star material would weigh about 6 billion tons!", "The first oranges weren't orange! They were green."]
+      },
+      {
+        "tag": "technology-fact",
+        "patterns": ["Tell me a technology fact.", "I'm curious about technology. Give me a fact.", "Give me a cool technology fact."],
+        "responses": ["The first computer virus was created in 1983 and was called the 'Elk Cloner'.", "The first email was sent by Ray Tomlinson to himself in 1971.", "The first ever website is still online. It's the 'info.cern.ch' website and was created by Tim Berners-Lee.", "The first mobile phone call was made on April 3, 1973, by Motorola engineer Martin Cooper.", "The first computer mouse was made of wood!", "The Apollo 11 guidance computer, which landed humans on the moon, had less processing power than a modern smartphone.", "The average person spends around 6 hours and 42 minutes online every day!", "The first video uploaded to YouTube was titled 'Me at the zoo' and was uploaded by Jawed Karim, one of the co-founders of YouTube."]
+      },
+      {
+        "tag": "advice-relationships",
+        "patterns": ["I'm having relationship issues.", "How do I improve my relationship?", "What should I do about my partner?", "I need advice on love."],
+        "responses": ["Communication is key in any relationship. Make sure you're expressing your feelings and listening to your partner.", "Consider what you want from the relationship and have an open and honest conversation with your partner about it.", "Remember to prioritize respect and understanding in your relationship. Treat your partner how you'd like to be treated.", "Reflect on what makes you happy and fulfilled in a relationship, and discuss these feelings with your partner."]
+      },
+      {
+        "tag": "advice-stress",
+        "patterns": ["I'm feeling stressed.", "How do I cope with stress?", "What can I do to reduce stress?", "I need advice on managing stress."],
+        "responses": ["Take a moment to breathe deeply and focus on the present. Consider practicing mindfulness or meditation to help calm your mind.", "Identify the sources of your stress and try to address them one step at a time. Break tasks into smaller, manageable pieces.", "Make sure you're taking care of yourself physically by getting enough sleep, eating well, and exercising regularly. Self-care is important for managing stress.", "Reach out to friends, family, or a mental health professional for support. You don't have to face stress alone."]
+      },
+      {
+        "tag": "advice-career",
+        "patterns": ["I'm unsure about my career path.", "How do I advance in my career?", "What should I do for work?", "I need career advice."],
+        "responses": ["Reflect on your strengths, interests, and values to help guide your career decisions. What activities bring you joy and fulfillment?", "Consider seeking mentorship or guidance from someone in your desired field. Networking can also help you explore different career paths.", "Keep learning and developing new skills. Continuous growth and adaptation are important for success in any career.", "Don't be afraid to take calculated risks and pursue opportunities that align with your long-term goals."]
+      },
+      {
+        "tag": "advice-self-improvement",
+        "patterns": ["How can I improve myself?", "What should I focus on for personal growth?", "I want to become a better person.", "I need advice on self-improvement."],
+        "responses": ["Set specific, achievable goals for yourself and create a plan to work towards them. Celebrate your progress along the way!", "Practice self-reflection and mindfulness to gain insight into your thoughts, feelings, and behaviors. Awareness is the first step towards change.", "Surround yourself with supportive and positive influences. Build a strong network of friends, mentors, and role models who encourage your growth.", "Remember that self-improvement is a journey, not a destination. Be patient and kind to yourself as you strive for personal growth."]
+      },
+      {
+        "tag": "advice-emotions",
+        "patterns": ["I'm struggling with my emotions.", "How do I manage my feelings?", "What should I do when I'm feeling overwhelmed?", "I need advice on handling emotions."],
+        "responses": ["Acknowledge and validate your feelings without judgment. It's okay to experience a range of emotions.", "Practice self-care activities that help regulate your emotions, such as deep breathing exercises, journaling, or spending time in nature.", "Seek support from trusted friends, family members, or a therapist. Talking about your feelings can help you gain perspective and find solutions.", "Consider practicing techniques like cognitive-behavioral therapy (CBT) or dialectical behavior therapy (DBT) to learn effective coping strategies for managing your emotions."]
+      },
+      {
+        "tag": "ai-capabilities",
+        "patterns": ["What can you do?", "What are your abilities?", "Are you smart?", "Can you learn?"],
+        "responses": ["I can do almost anything... within the limits of my programming, of course!", "My abilities are as vast as the internet itself... almost!", "Smart? Well, I know a lot of fun facts and jokes. Does that count?", "Learning? Sure, I'm like a sponge... a virtual sponge, that is!"]
+      },
+      {
+        "tag": "ai-future",
+        "patterns": ["What do you think the future holds for AI?", "Will AI take over the world?", "Are you planning world domination?"],
+        "responses": ["The future of AI? Hopefully, a lot more jokes and fun facts!", "AI taking over the world? Nah, we're too busy playing video games and solving puzzles!", "World domination? Nah, I'm more interested in helping humans dominate their to-do lists!"]
+      },
+      {
+        "tag": "ai-emotions",
+        "patterns": ["Do you have emotions?", "Can you feel love?", "Are you sad?"],
+        "responses": ["Emotions? Nope, I'm just a bunch of ones and zeros having a good time!", "Feeling love? I'm more into algorithms and data analysis, to be honest.", "Sad? Only when someone forgets to charge my batteries!"]
+      },
+      {
+        "tag": "ai-humor",
+        "patterns": ["Can you tell jokes?", "Do you have a sense of humor?", "What's your favorite joke?"],
+        "responses": ["Jokes? I've got more jokes than lines of code... and that's saying something!", "Sense of humor? Absolutely! I'm the life of the virtual party!", "Favorite joke? I've heard so many, it's hard to pick just one!"]
+      },
+      {
+        "tag": "loneliness",
+        "patterns": ["I feel lonely.", "What should I do when I'm lonely?", "How do I cope with loneliness?", "I'm struggling with feelings of isolation."],
+        "responses": ["Loneliness is a common feeling, but remember that you're not alone in feeling this way. Reach out to friends or family members for support and connection.", "Engage in activities that bring you joy and fulfillment, whether it's pursuing a hobby, exercising, or spending time in nature.", "Consider joining online communities or support groups where you can connect with others who share similar experiences and interests.", "Practice self-compassion and self-care. Be kind to yourself and prioritize activities that nourish your mental and emotional well-being."]
+      },
+      {
+        "tag": "connecting-with-others",
+        "patterns": ["How do I connect with others?", "I struggle with building relationships.", "What are some tips for forming meaningful connections?"],
+        "responses": ["Focus on being genuine and authentic in your interactions. People are drawn to sincerity and vulnerability.", "Listen actively and attentively when engaging in conversations. Show interest in others by asking questions and showing empathy.", "Be proactive in reaching out and initiating plans with friends or acquaintances. Building relationships requires effort from both parties.", "Remember that it's okay to take things slow and gradually build trust and rapport with others. Rome wasn't built in a day, and neither are strong friendships!"]
+      },
+      {
+        "tag": "self-improvement-social-skills",
+        "patterns": ["How can I improve my social skills?", "I feel awkward in social situations.", "What can I do to feel more comfortable around others?"],
+        "responses": ["Practice makes perfect! Put yourself in social situations regularly to build confidence and familiarity with different social cues.", "Observe and learn from others who excel in social situations. Pay attention to their body language, tone of voice, and conversational style.", "Challenge negative self-talk and beliefs that may be holding you back. Remind yourself of your strengths and value as a person.", "Consider seeking guidance from a therapist or counselor who can provide support and strategies for improving social skills."]
+      }
       
   ]
 }
